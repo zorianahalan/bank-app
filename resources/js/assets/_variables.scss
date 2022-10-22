@@ -1,0 +1,28 @@
+$app-dark: #333333;
+$app-dark-light: #3D3D3D;
+$app-dark-text: #595959;
+
+$app-white: #ffffff;
+
+$app-green: #00FF85;
+$app-green-light: #92E3A9;
+$app-green-dark: #00AA58;
+
+$app-red-light: #E39292;
+
+
+$app-width: 390px;
+$app-component-width: 330px;
+//Effects
+$app-effect-up-height: 4px;
+$app-effect-transition-duration: 0.2s;
+$app-effect-transition: ease;
+
+@mixin transition() {
+    transition: $app-effect-transition-duration all $app-effect-transition;
+}
+
+@mixin effect-up($color: $app-green-dark, $top: $app-effect-up-height, $left: 0px) {
+    transform: translateY(-$top) translateX(-$left);
+    box-shadow: $left $top 0 0 $color;
+}

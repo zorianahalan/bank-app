@@ -1,0 +1,226 @@
+@import 'variables';
+
+.ui-button {
+    width: $app-component-width;
+    padding: 10px;
+    background: $app-green;
+    border-radius: 4px;
+    border: 0;
+    //Font
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    @include transition();
+
+    &:hover {
+        @include effect-up();
+    }
+}
+
+.ui-input {
+    position: relative;
+    width: $app-component-width;
+    input {
+        width: $app-component-width;
+        padding: 13px;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+
+        background: $app-dark-light;
+        border-radius: 4px;
+        border: 2px solid $app-dark-light;
+
+        @include transition();
+        &:hover,
+        &:focus {
+            outline: none;
+            border: 2px solid $app-dark-text;
+        }
+
+        &::placeholder {
+            color: $app-dark-text;
+        }
+    }
+
+    label {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #00FF85;
+
+        user-select: none;
+    }
+    button {
+        position: absolute;
+        right: 16px;
+        bottom: 6px;
+        background: transparent;
+        border: 0;
+    }
+
+    &-full {
+        width: 100%;
+        input {
+            width: 100%;
+        }
+    }
+}
+
+
+.ui-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ui-span-link {
+    color: $app-dark-text;
+    font-size: 14px;
+    a {
+        color: currentColor;
+        text-decoration: underline;
+    }
+}
+
+.ui-friend,
+.ui-transaction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background: $app-dark;
+    padding: 6px;
+    border-radius: 4px;
+    border: 2px solid $app-dark;
+    @include transition();
+    cursor: pointer;
+    &:hover {
+        border: 2px solid $app-dark-text;
+    }
+    &-left {
+        display: flex;
+        flex-direction: row;
+        img {
+            border-radius: 10000px;
+            margin-right: 10px;
+        }
+        &-title {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            color: $app-green;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.ui-transaction {
+    &-left {
+        &-message {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: $app-green-dark;
+        }
+    }
+    &-right {
+        &-amount {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            color: $app-green;
+        }
+    }
+}
+
+.ui-friend {
+    background: $app-dark-light;
+    &-left {
+        &-role {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            color: $app-dark-text;
+        }
+        &-title {
+            line-height: 15px !important;
+        }
+    }
+    &-right {
+        button {
+            display: flex;
+            border: 0;
+            background: transparent;
+            border-radius: 4px;
+            @include transition();
+            cursor: pointer;
+            &:hover {
+                background: $app-dark-text;
+            }
+        }
+    }
+}
+
+.ui-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $app-dark;
+    width: 100%;
+    height: 100%;
+
+    &-header {
+        width: 100%;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        &__back {
+            display: flex;
+            border: 0;
+            background: transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            @include transition();
+
+            &:hover {
+                background: $app-dark-light;
+            }
+        }
+
+        &__title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: $app-green;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.ui-new-card {
+    cursor: pointer;
+    @include transition();
+    &:hover {
+        @include effect-up($app-green,10px, -10px);
+    }
+}
